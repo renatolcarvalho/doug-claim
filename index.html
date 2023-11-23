@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #f2f2f2;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    <div class="container" style="padding-top: 100px;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="col">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content rounded-4 shadow" style="padding: 10px 10px 10px 10px; background-color: #fff;">
+                            <div class="modal-header border-bottom-0">
+                                <h1 class="modal-title fs-5">Estamos à:</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body py-0">
+                                <h2 id="numbers">00</h2>
+                                <p>dias sem o <b>Doug</b> reclamar.</p>
+                            </div>
+                            <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                                <button type="button" id="btn-pay-respect" class="btn btn-lg btn-secondary">Pay
+                                    Respect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var currentDate = new Date();
+            var lastClaimDate = new Date('2023-11-23');
+            var msDifferences = currentDate - lastClaimDate;
+            var days = Math.floor(msDifferences / (1000 * 60 * 60 * 24));
+
+            $("#numbers")[0].textContent = days.toString();
+        });
+
+        $("#btn-pay-respect").click(function () {
+            confetti({
+                particleCount: 200,
+                scalar: 4,
+                shapes: ["text"],
+                shapeOptions: {
+                    text: {
+                        value: ["F", "😭"],
+                    },
+                },
+            });
+        })
+
+    </script>
+</body>
+
+</html>
