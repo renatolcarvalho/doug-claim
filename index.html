@@ -19,8 +19,6 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                </div>
-                <div class="col">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content rounded-4 shadow"
                             style="padding: 10px 10px 10px 10px; background-color: #fff;">
@@ -37,16 +35,38 @@
                                 <p>dias sem o <b>Doug</b> reclamar.</p>
                             </div>
                             <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
-                                <button type="button" id="btn-pay-respect" class="btn btn-lg btn-secondary">Pay
+                                <button type="button" id="btn-pay-respect-doug" class="btn btn-lg btn-secondary">Pay
                                     Respect</button>
                             </div>
                             <div>
-                                <p>Total Claim Count: <b>434</b> </p>
+                                <p>Total: <b>434</b> vezes.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content rounded-4 shadow"
+                            style="padding: 10px 10px 10px 10px; background-color: #fff;">
+                            <div class="modal-header border-bottom-0">
+                                <h1 class="modal-title fs-5">Sorry, I was on mute. (Corchado, Caio)</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <br>
+                            <div>
+                                <img src="mute.png" alt="" height="200px">
+                            </div>
+                            <div class="modal-body py-0">
+                                <h2 id="numbers">137 vezes.</h2>
+                            </div>
+                            <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                                <button type="button" id="btn-pay-respect-caio" class="btn btn-lg btn-secondary">Pay
+                                    Respect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -61,7 +81,7 @@
             $("#numbers")[0].textContent = days.toString();
         });
 
-        $("#btn-pay-respect").click(function () {
+        $("#btn-pay-respect-doug").click(function () {
             confetti({
                 particleCount: 200,
                 scalar: 4,
@@ -69,6 +89,19 @@
                 shapeOptions: {
                     text: {
                         value: ["F", "😭"],
+                    },
+                },
+            });
+        })
+
+        $("#btn-pay-respect-caio").click(function () {
+            confetti({
+                particleCount: 200,
+                scalar: 4,
+                shapes: ["text"],
+                shapeOptions: {
+                    text: {
+                        value: ["F", "🎙️"],
                     },
                 },
             });
